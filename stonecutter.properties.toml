@@ -11,6 +11,7 @@ build.fabric_api = "*"
 
 publish.modrinth   = "6FhIDpFC"
 publish.curseforge = "XXXXXXXX" #curseforge numeric ID
+publish.github     = "RS-256/infinote"
 
 # Per-version properties
 ["1.16"]
