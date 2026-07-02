@@ -101,7 +101,7 @@ public final class TransposeUtil {
         int targetNote = currentNote + k;
 
         if (0 <= targetNote && targetNote <= 24) {
-            level.getBlockState(pos).setValue(NoteBlock.NOTE, targetNote);
+            level.setBlock(pos, state.setValue(NoteBlock.NOTE, targetNote), 3);
             return "changed";
         }
 
@@ -165,8 +165,6 @@ public final class TransposeUtil {
             return "no_candidates";
         }
 
-        level.getBlockState(pos).setValue(NoteBlock.NOTE, bestNote);
-
         var bestBlockIdObj = IdCompat.idFromString(bestBlockId);
         if (bestBlockIdObj == null) {
             Infinote.LOGGER.warn("transpose candidate block invalid: {}", bestBlockId);
@@ -179,6 +177,7 @@ public final class TransposeUtil {
         }
 
         level.setBlock(belowPos, newBelowBlock.defaultBlockState(), 3);
+        level.setBlock(pos, state.setValue(NoteBlock.NOTE, bestNote), 3);
 
         Infinote.LOGGER.info(
                 "transposed {}: sound={} note {} -> {} using below {} -> {} pitchShift {} -> {}",
