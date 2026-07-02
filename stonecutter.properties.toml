@@ -1,7 +1,7 @@
 # Mod metadata — shared across all versions
 mod.id      = "infinote"
 mod.name    = "infinote"
-mod.version = "1.5.1"
+mod.version = "1.5.2"
 mod.group   = "com.rs256"
 
 deps.fabric_loader = "0.18.6"
