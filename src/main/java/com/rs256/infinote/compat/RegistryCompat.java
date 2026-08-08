@@ -27,7 +27,7 @@ public class RegistryCompat {
         if (!Registry.BLOCK.containsKey(id)) return null;
         return Registry.BLOCK.get(id);
     }
-     *///?} else if <=1.20.6 {
+     *///?} else if <=1.21.1 {
     /*public static Block getBlock(String blockId) {
         var id = IdCompat.idFromString(blockId);
         if (id == null) return null;
